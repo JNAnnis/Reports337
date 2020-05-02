@@ -1,6 +1,6 @@
 # Reports337
 
-ABOUT: These are the 9 reports I created in Fall 2016 for MTH337. Each report contains a small, independent project. All reports were created using Jupyter Notebook. Updated versions of the reports were created with Spyder4 and python 3.7, and may expand upon the original subject material in the original reports. Updated reports are mainly code-only; for more detailed explainations of the project see the Jupyter Notebooks.
+ABOUT: These are the 9 reports I created in Fall 2016 for MTH337. Each report contains a small, independent project. All reports were created using Jupyter Notebook. Updated versions of the reports were created with Spyder4 and python 3.7, and may expand upon the original subject material in the original reports. Updated reports are mainly code-only; for more detailed explainations of the projects see the corresponding Jupyter Notebooks.
 
 Project topics include:
 - Report 1: Primitive Pythagorean Triples
