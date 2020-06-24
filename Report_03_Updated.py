@@ -33,8 +33,8 @@ plt.title(r'Mauna Loa Mean Monthly $CO_2$ Levels', fontsize = 22)
 plt.xlabel('Year', fontsize = 18, labelpad = 20)
 plt.ylabel('$CO_2$ Level (ppm)', fontsize = 18, labelpad = 20)
 
-ax = plt.gca()
-ax.tick_params(axis = 'both', labelsize = 14)
+ax1 = plt.gca()
+ax1.tick_params(axis = 'both', labelsize = 14)
 
 
 # Quadratic Regression
@@ -135,5 +135,5 @@ plt.xlabel('Month', fontsize = 16, labelpad = 20)
 plt.ylabel('Residual', fontsize = 16, labelpad = 20)
 plt.legend()
 
-ax = plt.gca()
-ax.tick_params(axis = 'both', labelsize = 14)
+ax2 = plt.gca()
+ax2.tick_params(axis = 'both', labelsize = 14)
