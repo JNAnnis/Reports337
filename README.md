@@ -19,6 +19,6 @@ Other Notes:
 - Report 3 requires the NOAA ESRL mean monthly Mauna Loa CO2 data 
 - Report 5: cellular automata will change each time the code is re-run
 - Report 7 requires a sound file
-- Report 10 requires the text files of the Phantom of the Opera, Hamlet, and the Count of Monte Cristo which can be obtained through  Project Gutenberg
+- Report 10 requires the text files of either The Phantom of the Opera, Hamlet, Pride and Prejudice, or The Count of Monte Cristo which can be obtained through Project Gutenberg
 
 The file 337Fall2016_Reports is just a compliation of all reports into one notebook.
