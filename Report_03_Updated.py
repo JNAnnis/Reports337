@@ -17,6 +17,7 @@ esrl.noaa.gov/gmd/ccgg/trends/data/html
 import numpy as np
 import numpy.polynomial.polynomial as poly
 import matplotlib.pyplot as plt
+from scipy import stats
 
 
 # Load in the data
@@ -37,6 +38,38 @@ ax1 = plt.gca()
 ax1.tick_params(axis = 'both', labelsize = 14)
 
 
+# Linear regression with plot
+slope, intercept, rValue, pValue, stdErr = stats.linregress(year, co2)
+linReg = intercept + slope*year
+
+plt.figure(figsize = (12, 8))
+plt.plot(year, co2, color = 'blue')
+plt.plot(year, linReg, color = 'darkorange')
+
+plt.title('Linear Regression', fontsize = 22)
+plt.xlabel('Year', fontsize = 18, labelpad = 20)
+plt.ylabel('$CO_2$ Level (ppm)', fontsize = 18, labelpad = 20)
+
+ax2 = plt.gca()
+ax2.tick_params(axis = 'both', labelsize = 14)
+
+print('The r value for the linear regression is', rValue, '\n')
+
+
+# Plot the linear regression residuals
+linResid = co2 - linReg
+
+plt.figure(figsize = (12, 8))
+plt.plot(year, linResid, color = 'darkgreen', marker = '.', ls = 'none')
+
+plt.title('Linear Regression Residuals', fontsize = 22)
+plt.xlabel('Year', fontsize = 18)
+plt.ylabel('Residual', fontsize = 18)
+
+ax3 = plt.gca()
+ax3.tick_params(axis = 'both', labelsize = 14)
+
+
 # Quadratic Regression
 coeff2, stats2 = poly.polyfit(year, co2, 2, full = True)
 quadFit = poly.polyval(year, coeff2)
@@ -53,7 +86,7 @@ quartFit = poly.polyval(year, coeff3)
 resid4 = stats4[0]
 
 
-# Compare the regressions graphically
+# Compare the polynomial regressions graphically
 plt.figure(figsize = (16, 8))
 plt.subplots_adjust(wspace = 0.5)
 
@@ -90,7 +123,7 @@ print('Sum of squared residuals:')
 print('Quadratic:', resid2[0])
 print('Cubic:', resid3[0])
 print('Quartic:', resid4[0])
-print()
+print('\n')
 
 
 # Predict the CO2 levels for each model at years 2050 and 2100
@@ -135,5 +168,5 @@ plt.xlabel('Month', fontsize = 16, labelpad = 20)
 plt.ylabel('Residual', fontsize = 16, labelpad = 20)
 plt.legend()
 
-ax2 = plt.gca()
-ax2.tick_params(axis = 'both', labelsize = 14)
+ax4 = plt.gca()
+ax4.tick_params(axis = 'both', labelsize = 14)
